@@ -1,6 +1,6 @@
 # esbuild-plugin-svgr
 
-A plugin for [esbuild](https://github.com/evanw/esbuild) that adds support for `*.svg` file imports as React components. The plugin is built on top of [@svgr/core](https://react-svgr.com/docs/node-api/).
+A plugin for [esbuild](https://github.com/evanw/esbuild) that adds support for `*.svg` file imports as React components. The plugin is built on top of [SVGR](https://github.com/gregberge/svgr).
 
 ## Basic Usage
 
@@ -8,29 +8,31 @@ A plugin for [esbuild](https://github.com/evanw/esbuild) that adds support for `
 ```bash
 npm install --save-dev esbuild-plugin-svgr
 # or use yarn
-yarn add --dev esbuild-plugin-svg
+yarn add --dev esbuild-plugin-svgr
 ```
 
 2. Add this plugin to your esbuild build script:
 ```js
-const svgrPlugin = require('esbuild-plugin-svgr')
+const svgrPlugin = require('esbuild-plugin-svgr');
 
 esbuild.build({
     plugins: [
         svgrPlugin(),
     ],
-})
+});
 ```
 
 3. Import your `*.svg` file from JavaScript:
 ```js
 import Icon from './icon.svg';
 
-const App = () => (
-    <div>
-        <Icon />
-    </div>
-);
+function App() {
+    return (
+        <div>
+            <Icon />
+        </div>
+    );
+}
 ```
 
 4. Pass in optional [supported](https://github.com/gregberge/svgr/blob/master/packages/core/src/config.js#L3) configuration options:
@@ -39,7 +41,7 @@ esbuild.build({
     plugins: [
         svgrPlugin({ ref: true }),
     ],
-})
+});
 ```
 
 ## Author
@@ -48,8 +50,8 @@ esbuild.build({
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/kazijawad/esbuild-plugin-svgr/blob/main/LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/kazijawad/esbuild-plugin-svgr/blob/main/LICENSE.md) file for details.
 
 ## Acknowledgements
 
-[@svgr/core](https://github.com/gregberge/svgr/tree/master/packages/core)
+[SVGR](https://github.com/gregberge/svgr)
