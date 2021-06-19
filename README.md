@@ -35,7 +35,7 @@ function App() {
 }
 ```
 
-4. Pass in optional [supported](https://github.com/gregberge/svgr/blob/master/packages/core/src/config.js#L3) configuration options:
+4. Pass in optional [supported](https://react-svgr.com/docs/options/) configuration options:
 ```js
 esbuild.build({
     plugins: [
