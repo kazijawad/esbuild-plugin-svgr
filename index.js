@@ -9,7 +9,7 @@ module.exports = (options = {}) => ({
             const contents = await svgr(svg, { ...options }, { filePath: args.path });
             return {
                 contents,
-                loader: 'jsx',
+                loader: options.typescript ? 'tsx' : 'jsx',
             };
         });
     },
