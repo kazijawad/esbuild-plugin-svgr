@@ -15,6 +15,6 @@
     },
     "homepage": "https://github.com/kazijawad/esbuild-plugin-svgr#readme",
     "dependencies": {
-        "@svgr/core": "^6.1.2"
+        "@svgr/core": "^6.5.1"
     }
 }

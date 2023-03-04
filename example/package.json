@@ -1,0 +1,14 @@
+{
+    "name": "esbuild-svgr-example",
+    "scripts": {
+        "build": "node build.mjs"
+    },
+    "devDependencies": {
+        "esbuild": "^0.17.11",
+        "esbuild-plugin-svgr": "file:.."
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    }
+}

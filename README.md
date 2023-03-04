@@ -13,13 +13,14 @@ yarn add --dev esbuild-plugin-svgr
 
 2. Add this plugin to your esbuild build script:
 ```js
-const svgrPlugin = require('esbuild-plugin-svgr');
+import esbuild from 'esbuild'
+import svgr from 'esbuild-plugin-svgr'
 
-esbuild.build({
+await esbuild.build({
     plugins: [
-        svgrPlugin(),
+        svgr(),
     ],
-});
+})
 ```
 
 3. Import your `*.svg` file from JavaScript:
@@ -39,14 +40,10 @@ function App() {
 ```js
 esbuild.build({
     plugins: [
-        svgrPlugin({ ref: true }),
+        svgr({ ref: true }),
     ],
 });
 ```
-
-## Author
-
-[Kazi Jawad](https://github.com/kazijawad)
 
 ## License
 
