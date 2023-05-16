@@ -5,6 +5,7 @@ A plugin for [esbuild](https://github.com/evanw/esbuild) that adds support for `
 ## Basic Usage
 
 1. Install the plugin in your project:
+
 ```bash
 npm install --save-dev esbuild-plugin-svgr
 # or use yarn
@@ -12,6 +13,7 @@ yarn add --dev esbuild-plugin-svgr
 ```
 
 2. Add this plugin to your esbuild build script:
+
 ```js
 import esbuild from 'esbuild'
 import svgr from 'esbuild-plugin-svgr'
@@ -24,6 +26,7 @@ await esbuild.build({
 ```
 
 3. Import your `*.svg` file from JavaScript:
+
 ```js
 import Icon from './icon.svg';
 
@@ -37,6 +40,7 @@ function App() {
 ```
 
 4. Pass in optional [supported](https://react-svgr.com/docs/options/) configuration options:
+
 ```js
 esbuild.build({
     plugins: [
