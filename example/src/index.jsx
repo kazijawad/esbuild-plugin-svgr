@@ -1,8 +1,7 @@
-import './styles.css'
-
 import * as React from 'react'
 import * as Server from 'react-dom/server'
 
+import './index.css'
 import Asset from './asset.svg'
 
 function App() {
