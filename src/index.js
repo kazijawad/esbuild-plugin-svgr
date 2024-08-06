@@ -27,6 +27,15 @@ const svgrPlugin = (options = {}) => ({
                 options.plugins = ['@svgr/plugin-jsx']
             }
 
+            if(options.svgo !== false) {
+                options.svgo = true;
+                if (options.plugins && !options.plugins.includes('@svgr/plugin-svgo')) {
+                    options.plugins = ['@svgr/plugin-svgo', ...options.plugins || []]
+                } else if (!options.plugins) {
+                    options.plugins = ['@svgr/plugin-svgo']
+                }
+            }
+
             const contents = await transform(svg, { ...options }, { filePath: args.path })
 
             if (args.suffix === '?url') {
