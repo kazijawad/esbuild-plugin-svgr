@@ -1,7 +1,9 @@
 const { readFile } = require('node:fs/promises')
 const { transform } = require('@svgr/core')
 
-const svgrPlugin = (options = {}) => ({
+const svgrPlugin = (options = {
+    markExternal: true
+}) => ({
     name: 'svgr',
     setup(build) {
         build.onResolve({ filter: /\.svg$/ }, async (args) => {
@@ -12,8 +14,10 @@ const svgrPlugin = (options = {}) => ({
                 case 'require-resolve':
                     return
                 default:
-                    return {
-                        external: true,
+                    if (options.markExternal) {
+                        return {
+                            external: true,
+                        }
                     }
             }
         })
