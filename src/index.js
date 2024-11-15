@@ -7,6 +7,7 @@ const svgrPlugin = (options = {
     name: 'svgr',
     setup(build) {
         build.onResolve({ filter: /\.svg$/ }, async (args) => {
+          if (build.bundle) {
             switch (args.kind) {
                 case 'import-statement':
                 case 'require-call':
@@ -20,15 +21,14 @@ const svgrPlugin = (options = {
                         }
                     }
             }
+          }
         })
 
         build.onLoad({ filter: /\.svg$/ }, async (args) => {
-            const svg = await readFile(args.path, { encoding: 'utf8' })
-
-            if (options.plugins && !options.plugins.includes('@svgr/plugin-jsx')) {
+            const svg = await readFile(args.path, 'utf8')
+            options.plugins ||= []
+            if (!options.plugins.includes('@svgr/plugin-jsx')) {
                 options.plugins.push('@svgr/plugin-jsx')
-            } else if (!options.plugins) {
-                options.plugins = ['@svgr/plugin-jsx']
             }
 
             const contents = await transform(svg, { ...options }, { filePath: args.path })
