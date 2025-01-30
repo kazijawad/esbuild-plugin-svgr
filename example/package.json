@@ -4,7 +4,7 @@
         "build": "node build.mjs"
     },
     "devDependencies": {
-        "esbuild": "^0.23.0",
+        "esbuild": "^0.24.2",
         "esbuild-plugin-svgr": "file:.."
     },
     "dependencies": {

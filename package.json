@@ -20,12 +20,13 @@
     "homepage": "https://github.com/kazijawad/esbuild-plugin-svgr#readme",
     "dependencies": {
         "@svgr/core": "^8.1.0",
-        "@svgr/plugin-jsx": "^8.1.0"
+        "@svgr/plugin-jsx": "^8.1.0",
+        "semver": "^6.3.1"
     },
     "devDependencies": {
-        "esbuild": "^0.23.0"
+        "esbuild": "^0.24.2"
     },
     "peerDependencies": {
-        "esbuild": "^0.23.0"
+        "esbuild": "^0.24.2"
     }
 }
